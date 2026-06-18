@@ -115,3 +115,19 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 
   window.open(mailtoLink, '_self');
 });
+//gallery
+const buttons = document.querySelectorAll(".more-btn");
+
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const extra = button.previousElementSibling.querySelector(".extra-images");
+
+        extra.classList.toggle("show");
+
+        if(extra.classList.contains("show")){
+            button.textContent = "Show Less";
+        }else{
+            button.textContent = "More Photos";
+        }
+    });
+});
