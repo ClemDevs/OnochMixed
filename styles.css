@@ -181,13 +181,84 @@ td{padding:.85rem 1rem;border-top:1px solid var(--border);font-size:.85rem;color
 tbody tr:nth-child(even){background:var(--cream)}
 
 /* Gallery */
-.gallery{display:grid;gap:1rem;grid-template-columns:repeat(1,1fr)}
-@media(min-width:768px){.gallery{grid-template-columns:repeat(3,1fr)}}
-.tile{position:relative;border-radius:.75rem;overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow-card)}
-.tile img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.tile:hover img{transform:scale(1.05)}
-.cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(to top,rgba(0,0,0,.7),transparent);color:#fff;padding:.85rem;font-size:.8rem;font-weight:600;font-family:var(--serif)}
+.gallery-category{
+    margin-bottom:60px;
+}
 
+.gallery-category h3{
+    text-align:center;
+    margin-bottom:20px;
+    color:#0b3d91;
+    font-size:1.8rem;
+}
+
+.gallery-grid{
+    display:grid;
+    gap:1rem;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
+
+.extra-images{
+    display:none;
+    grid-column:1/-1;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:1rem;
+}
+
+.extra-images.show{
+    display:grid;
+}
+
+.more-btn{
+    display:block;
+    margin:20px auto 0;
+    padding:10px 25px;
+    border:none;
+    border-radius:30px;
+    background:#0b3d91;
+    color:#fff;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.more-btn:hover{
+    background:#d4af37;
+    color:#000;
+}
+
+/* Existing Gallery Styles */
+
+.tile{
+    position:relative;
+    border-radius:.75rem;
+    overflow:hidden;
+    aspect-ratio:4/3;
+    box-shadow:var(--shadow-card);
+}
+
+.tile img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .4s;
+}
+
+.tile:hover img{
+    transform:scale(1.05);
+}
+
+.cap{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    background:linear-gradient(to top,rgba(0,0,0,.7),transparent);
+    color:#fff;
+    padding:.85rem;
+    font-size:.8rem;
+    font-weight:600;
+}
 /* News */
 .news-grid{display:grid;gap:1.5rem;grid-template-columns:1fr}
 @media(min-width:1024px){.news-grid{grid-template-columns:2fr 1fr}}
